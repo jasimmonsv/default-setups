@@ -66,7 +66,8 @@ sudo apt-get install -yy docker-ce-cli
 sudo apt-get install -yy containerd.io
 
 # install golang
-./install_go.sh
+chmod u+x ./install_go.sh
+sudo ./install_go.sh
 
 # install go binaries
 #go install github.com/zmb3/gogetdoc
