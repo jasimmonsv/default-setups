@@ -16,6 +16,7 @@ sudo apt-get dist-upgrade -yy
 echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+echo 'deb http:/apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted' | sudo tee /etc/apt/sources.list.d/spideroak.com.sources.list
 
 # ppa
 sudo add-apt-repository -yy universe
@@ -25,6 +26,8 @@ sudo add-apt-repository -yy universe
 wget -q -O - "https://dl-ssl.google.com/linux/linux_signing_key.pub" | sudo apt-key add -
 ## docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+## Spideroak
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
 
 sudo apt-get update
 
@@ -105,6 +108,7 @@ sudo apt-get install -yy fluxgui # eye protection sw
 sudo apt-get install -yy google-chrome-stable
 sudo apt-get install -yy grub-customizer
 sudo apt-get install -yy gnome-tweak-tool
+sudo apt-get install -yy spideroakone
 
 ## Other Options
 # switch from wayland to xorg in ubuntu 17 for shutter to work
@@ -131,8 +135,11 @@ hostnamectl set-hostname 'sleipnir'
 
 # add dotfiles
 git clone --recurse-submodules https://github.com/jasimmonsv/dotfiles
-# cd dotfiles && ./install.sh
-# rm -rf dotfiles
+cd dotfiles && ./install.sh  # TODO
+sudo rm -rf dotfiles
 
 # Setup home directory structure
 mkdir ~/00Dump ~/01Landfill ~/02IncomingMedia ~/03Projects ~/04Documents ~/06Applications ~/07Keys
+
+# Cleanup
+sudo apt-get autoremove -yy
