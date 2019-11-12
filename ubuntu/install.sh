@@ -16,7 +16,6 @@ sudo apt-get dist-upgrade -yy
 echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-echo 'deb http:/apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted' | sudo tee /etc/apt/sources.list.d/spideroak.com.sources.list
 
 # ppa
 sudo add-apt-repository -yy universe
@@ -45,6 +44,7 @@ sudo apt-get install -yy gnupg-agent
 sudo apt-get install -yy git
 sudo apt-get install -yy tmux
 sudo apt-get install -yy ctags
+sudo apt-get install -yy spideroakone
 
 ## C/CPP Specific
 sudo apt-get install -yy build-essential
@@ -135,7 +135,7 @@ hostnamectl set-hostname 'sleipnir'
 
 # add dotfiles
 git clone --recurse-submodules https://github.com/jasimmonsv/dotfiles
-cd dotfiles && ./install.sh  # TODO
+cd dotfiles && ./install.sh
 sudo rm -rf dotfiles
 
 # Setup home directory structure
