@@ -136,7 +136,7 @@ hostnamectl set-hostname 'sleipnir'
 # add dotfiles
 git clone --recurse-submodules https://github.com/jasimmonsv/dotfiles
 cd dotfiles && ./install.sh
-sudo rm -rf dotfiles
+sudo rm -rf ./dotfiles
 
 # Setup home directory structure
 mkdir ~/00Dump ~/01Landfill ~/02IncomingMedia ~/03Projects ~/04Documents ~/06Applications ~/07Keys
