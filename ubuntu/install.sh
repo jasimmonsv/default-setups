@@ -121,7 +121,7 @@ sudo usermod -aG docker $(whoami)
 # git configurations
 git config --global user.email "simmonsj@jasimmonsv.com"
 git config --global user.name "jasimmonsv"
-git config --system core.editor "vim"
+sudo git config --system core.editor "vim"
 
 # clicking on app in dock minimizes it
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
