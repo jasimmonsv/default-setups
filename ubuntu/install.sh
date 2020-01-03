@@ -1,24 +1,19 @@
 #!/bin/bash
 #Shout out to preslavmihaylov for the idea
 
-# Ask for sudo access at start of script
-if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-fi
-
-# initial upgrade of system
-sudo apt-get update -yy
-sudo apt-get upgrade -yy
-sudo apt-get dist-upgrade -yy
-
 # apt repositories
 echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+## docker
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-
-# ppa
+## ppa
 sudo add-apt-repository -yy universe
+
+## Flux
+sudo add-apt-repository -yy ppa:nathan-renniewaldock/flux
+
+## NodeJS
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+
 
 # repository keys
 ## chrome
@@ -28,7 +23,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ## Spideroak
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
 
-sudo apt-get update
+# initial upgrade of system
+sudo apt-get update -yy
+sudo apt-get upgrade -yy
+sudo apt-get dist-upgrade -yy
 
 # Installations
 ## Essential
@@ -47,6 +45,7 @@ sudo apt-get install -yy ctags
 sudo apt-get install -yy spideroakone
 
 ## C/CPP Specific
+sudo apt-get install -yy gcc g++ make
 sudo apt-get install -yy build-essential
 sudo apt-get install -yy cmake
 sudo apt-get install -yy valgrind
@@ -62,8 +61,8 @@ sudo apt-get install -yy python3
 sudo apt-get install -yy python-dev
 sudo apt-get install -yy python-pip
 sudo apt-get install -yy python3-pip
-sudo apt-get install -yy npm
 sudo apt-get install -yy nodejs
+sudo apt-get install -yy npm
 sudo apt-get install -yy docker-ce
 sudo apt-get install -yy docker-ce-cli
 sudo apt-get install -yy containerd.io
@@ -136,7 +135,7 @@ hostnamectl set-hostname 'sleipnir'
 # add dotfiles
 git clone --recurse-submodules https://github.com/jasimmonsv/dotfiles
 cd dotfiles && ./install.sh
-sudo rm -rf ./dotfiles
+cd ../ && rm -rf ./dotfiles
 
 # Setup home directory structure
 mkdir -p ~/00Dump \
