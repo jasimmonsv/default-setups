@@ -139,14 +139,14 @@ cd dotfiles && ./install.sh
 sudo rm -rf ./dotfiles
 
 # Setup home directory structure
-mkdir ~/00Dump \
-      ~/01Landfill \
-      ~/02IncomingMedia \
-      ~/03Projects \
-      ~/04Documents \
-      ~/05Archive \
-      ~/06Applications \
-      ~/07Keys
+mkdir -p ~/00Dump \
+    ~/01Landfill \
+    ~/02IncomingMedia \
+    ~/03Projects \
+    ~/04Documents \
+    ~/05Archive \
+    ~/06Applications \
+    ~/07Keys
 
 # Cleanup
 sudo apt-get autoremove -yy
