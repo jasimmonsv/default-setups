@@ -16,6 +16,7 @@ brew install ctags
 #brew install python@2
 brew install tmux
 brew install wget
+brew install npm
 brew install golang
 #brew install the_silver_searcher # ag command
 #brew cask install alacritty
@@ -72,5 +73,5 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # install dotfiles
 git clone --recurse-submodules https://github.com/jasimmonsv/dotfiles
 cd dotfiles && ./install.sh
-rm -rf dotfiles
+cd .. && rm -rf dotfiles
 
