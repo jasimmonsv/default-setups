@@ -42,6 +42,7 @@ sudo apt-get install -yy gnupg-agent
 sudo apt-get install -yy git
 sudo apt-get install -yy tmux
 sudo apt-get install -yy ctags
+sudo apt-get install -yy xclip
 sudo apt-get install -yy spideroakone
 
 ## C/CPP Specific
