@@ -3,6 +3,7 @@
 
 # apt repositories
 echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+echo 'deb http://APT.spideroak.com/ubuntu-spideroak-hardy/ release restricted' | sudo tee /etc/apt/sources.list.d/spideroak.list
 ## docker
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ## ppa
@@ -12,13 +13,14 @@ sudo add-apt-repository -yy universe
 sudo add-apt-repository -yy ppa:nathan-renniewaldock/flux
 
 ## NodeJS
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
 
 # repository keys
 ## chrome
 wget -q -O - "https://dl-ssl.google.com/linux/linux_signing_key.pub" | sudo apt-key add -
 ## docker
+A
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ## Spideroak
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
@@ -44,7 +46,6 @@ sudo apt-get install -yy git
 sudo apt-get install -yy tmux
 sudo apt-get install -yy ctags
 sudo apt-get install -yy xclip
-sudo apt-get install -yy spideroakone
 
 ## C/CPP Specific
 sudo apt-get install -yy gcc g++ make
@@ -58,10 +59,7 @@ sudo apt-get install -yy checkinstall
 sudo apt-get install -yy maven
 
 ## Programming Languages/Tools
-sudo apt-get install -yy python
 sudo apt-get install -yy python3
-sudo apt-get install -yy python-dev
-sudo apt-get install -yy python-pip
 sudo apt-get install -yy python3-pip
 sudo apt-get install -yy nodejs
 sudo apt-get install -yy npm
@@ -110,6 +108,11 @@ sudo apt-get install -yy google-chrome-stable
 sudo apt-get install -yy grub-customizer
 sudo apt-get install -yy gnome-tweak-tool
 sudo apt-get install -yy spideroakone
+
+## Keybase
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt-get install -yy ./keybase_amd64.deb
+rm ./keybase_amd64.deb
 
 ## Other Options
 # switch from wayland to xorg in ubuntu 17 for shutter to work
