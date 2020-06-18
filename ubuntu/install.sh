@@ -1,29 +1,33 @@
 #!/bin/bash
 #Shout out to preslavmihaylov for the idea
 
+# repository keys
+## chrome
+wget -q -O - "https://dl-ssl.google.com/linux/linux_signing_key.pub" | sudo apt-key add -
+## docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+## Spideroak
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
+## Atom
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+
 # apt repositories
+## Chrome
 echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+## Spideroak
 echo 'deb http://APT.spideroak.com/ubuntu-spideroak-hardy/ release restricted' | sudo tee /etc/apt/sources.list.d/spideroak.list
 ## docker
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ## ppa
 sudo add-apt-repository -yy universe
-
 ## Flux
 sudo add-apt-repository -yy ppa:nathan-renniewaldock/flux
-
 ## NodeJS
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+## Atom
+echo 'deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main' | sudo tee /etc/apt/sources.list.d/atom.list
 
 
-# repository keys
-## chrome
-wget -q -O - "https://dl-ssl.google.com/linux/linux_signing_key.pub" | sudo apt-key add -
-## docker
-A
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-## Spideroak
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
 
 # initial upgrade of system
 sudo apt-get update -yy
@@ -108,6 +112,7 @@ sudo apt-get install -yy google-chrome-stable
 sudo apt-get install -yy grub-customizer
 sudo apt-get install -yy gnome-tweak-tool
 sudo apt-get install -yy spideroakone
+sudo apt-get install -yy atom
 
 ## Keybase
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
