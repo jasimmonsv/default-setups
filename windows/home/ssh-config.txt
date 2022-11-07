@@ -1,0 +1,15 @@
+# Put in c:\Users\<username>\.ssh
+host github.com
+  HostName github.com
+  IdentityFile D:\07Keys\id_rsa
+  User git
+
+host gitlab.rigby.simmons.family
+  HostName gitlab.rigby.simmons.family
+  IdentityFile D:\07Keys\id_rsa
+  User git
+  
+host gitlab.com
+  HostName gitlab.com
+  IdentityFile D:\07Keys\id_rsa
+  User gitlab@jasimmonsv.com
