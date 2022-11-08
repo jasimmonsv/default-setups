@@ -24,7 +24,7 @@ A repository with all initial tools I need upon installing a new Windows machine
 3. Install GNU Privacy Guard
 4. Install Gpg4win
 5. Install Kleopatra
-5. Install KeePass
+5. Install [KeePass](https://keepass.info/download.html)
 
 ## Art
 1. Install [PixelMash](https://nevercenter.com/pixelmash/)
