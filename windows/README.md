@@ -21,10 +21,10 @@ A repository with all initial tools I need upon installing a new Windows machine
 ## Crypto
 1. Install [Cryptool 2](https://www.cryptool.org/en/ct2/)
 2. Install [Keybase](https://keybase.io/)
-3. Install GNU Privacy Guard
-4. Install Gpg4win
-5. Install Kleopatra
-5. Install [KeePass](https://keepass.info/download.html)
+3. Install [Gpg4win](https://gnupg.org/download/index.html)
+  * Includes GNU Privacy Guard
+  * Includes Kleopatra
+6. Install [KeePass](https://keepass.info/download.html)
 
 ## Art
 1. Install [PixelMash](https://nevercenter.com/pixelmash/)
