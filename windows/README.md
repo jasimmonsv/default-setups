@@ -9,8 +9,9 @@ A repository with all initial tools I need upon installing a new Windows machine
 5. Install Spotify
 6. Install [SpiderOak One Backup](https://spideroak.com/opendownload/)
 7. Install Java
-8. Install OpenVPN
-9. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+8. Install [Python](https://www.python.org/downloads/)
+9. Install [OpenVPN](https://openvpn.net/community-downloads/)
+10. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 
 
